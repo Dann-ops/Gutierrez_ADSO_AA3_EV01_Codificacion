@@ -1,9 +1,3 @@
-# =================================================================
-# PROGRAMA: Sistema de Gestión de Inventario - Módulo Producto
-# EVIDENCIA: GA7-220501096-AA3-EV01
-# APRENDIZ: Dann Esteban Gutierrez Callejas
-# =================================================================
-
 from flask import Flask, render_template, request, redirect, url_for
 import mysql.connector
 
@@ -47,7 +41,7 @@ def registrar():
     cursor = db.cursor()
     # Inserción alineada con la tabla PRODUCTO del diagrama de clases
     sql = """INSERT INTO producto (id_negocio, nombre, codigo_barra, categoria, precio_compra, precio_venta, stock, stock_minimo) 
-             VALUES (1, %s, %s, %s, %s, %s, %s, %s)"""
+            VALUES (1, %s, %s, %s, %s, %s, %s, %s)"""
     cursor.execute(sql, (nombre, codigo, cat, p_compra, p_venta, stock, minimo))
     db.commit()
     cursor.close()
